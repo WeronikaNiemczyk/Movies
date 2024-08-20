@@ -2,10 +2,10 @@
   "name": "parcel-project-template",
   "version": "1.1.0",
   "description": "",
-  "homepage": "https://github.com/Romanooo84/GoIT-Movies.git",
+  "homepage": "https://github.com/WeronikaNiemczyk/Movies.git",
   "scripts": {
     "dev": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /GoIT-Movies/"
+    "build": "parcel build src/*.html --public-url /Movies/"
   },
   "repository": {
     "type": "git",
