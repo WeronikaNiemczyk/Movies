@@ -25,9 +25,9 @@ const manageWatched = event => {
         if (!isMovieAlreadyAdded) {
           watched.push({ id: movieId });
           localStorage.setItem('watched', JSON.stringify(watched));
-          Notiflix.Notify.success('Video has been added to the queued list');
+          Notiflix.Notify.success('Video has been added to the watched list');
         } else {
-          Notiflix.Notify.warning('This video is already in your queue.');
+          Notiflix.Notify.warning('This video is already in your watched list.');
         }
       } else if (event.target.classList.contains('remove')) {
         if (isMovieAlreadyAdded) {

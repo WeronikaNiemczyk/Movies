@@ -17,7 +17,7 @@ export const showWatched = async () => {
   const moviesListW = document.querySelector('.library-watched');
   moviesListQ.style.display = 'none';
   moviesListW.style.display = 'flex';
-  if (moviesInStorageW) {
+  if (moviesInStorageW && JSON.parse(moviesInStorageW).length > 0) {
     const watched = JSON.parse(moviesInStorageW);
 
     // Tworzenie markupu dla każdego filmu
