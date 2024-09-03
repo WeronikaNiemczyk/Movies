@@ -1,23 +1,21 @@
 function loaderOn() {
-    document.getElementById('loader').style.display = 'flex';
-
+  document.getElementById('loader').style.display = 'flex';
 }
 
 function loaderOff() {
-    document.getElementById('loader').style.display = 'none';
+  document.getElementById('loader').style.display = 'none';
 }
 
-document.getElementById('searchForm').addEventListener('submit', function(event) {
-    event.preventDefault
-    loaderOn(); // Show loader when button is clicked
-    
-    // Simulate an asynchronous action with setTimeout
-    setTimeout(function() {
-      loaderOff(); // Hide loader after x seconds (simulating an action)
-    }, 1000);
+document.getElementById('searchForm').addEventListener('submit', function (event) {
+  event.preventDefault;
+  loaderOn();
+
+  setTimeout(function () {
+    loaderOff();
+  }, 1000);
 });
 
 loaderOn();
-setTimeout(function() {
-loaderOff();
+setTimeout(function () {
+  loaderOff();
 }, 1000);

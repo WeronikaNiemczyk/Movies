@@ -3,16 +3,14 @@ const moviesListQ = document.querySelector('.library-queue');
 const modal = document.querySelector('.modal-window');
 
 const manageQueue = event => {
-  // Sprawdzanie, czy kliknięty element jest przyciskiem 'Add to queue' lub 'Remove from queue'
   if (event.target.id === 'queue-button') {
     const movieId = event.target.getAttribute('data-movie-id');
 
     if (typeof Storage !== 'undefined') {
       const moviesInQueue = localStorage.getItem('queue');
-      // console.log(JSON.parse(moviesInQueue).length);
+
       let queue = moviesInQueue ? JSON.parse(moviesInQueue) : [];
 
-      // Sprawdzanie, czy film jest już na liście, aby uniknąć duplikatów lub usuwanie z listy
       const isMovieAlreadyAdded = queue.some(movie => movie.id === movieId);
       if (event.target.classList.contains('add')) {
         if (!isMovieAlreadyAdded) {
@@ -28,7 +26,6 @@ const manageQueue = event => {
           localStorage.setItem('queue', JSON.stringify(queue));
           Notiflix.Notify.info('Video has been removed from the queued list');
           if (JSON.parse(moviesInQueue).length === 1) {
-            // moviesListQ.style.display = 'flex';
             moviesListQ.innerHTML = `<img src="https://i.pinimg.com/originals/4a/06/ef/4a06efb5a2f39feaa2f81b9f3d179a94.gif"/>`;
           } else {
           }
@@ -42,5 +39,4 @@ const manageQueue = event => {
   }
 };
 
-// Dodanie nasłuchiwacza do całego modalu, ale reagowanie tylko na przyciski 'Add to queue' i 'Remove from queue'
 modal.addEventListener('click', manageQueue);

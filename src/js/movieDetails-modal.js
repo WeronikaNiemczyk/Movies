@@ -28,9 +28,9 @@ const openModal = async movieId => {
             <p>Genre</p>
           </div>
           <div class="modal-rates__results">
-            <p><span class="modal-rates__vote">${
-              movieDetails.vote_average
-            }</span> / <span class="modal-rates__allvotes">${movieDetails.vote_count}</span></p>
+            <p><span class="modal-rates__vote">${movieDetails.vote_average.toFixed(
+              1,
+            )}</span> / <span class="modal-rates__allvotes">${movieDetails.vote_count}</span></p>
             <p>${movieDetails.popularity}</p>
             <p>${movieDetails.original_title}</p>
             <p>${movieDetails.genres.map(genre => genre.name).join(', ')}</p>
@@ -41,7 +41,7 @@ const openModal = async movieId => {
           <dd>${movieDetails.overview}</dd>
         </div>
         <div class="modal-button-window">
-          <button class="button-standard modal-button modal-button__queue add" data-movie-id="${movieId}" type="button" class="add-to-watched"  id="watched-btn">ADD TO WATCHED</button>
+          <button class="button-standard modal-button add" data-movie-id="${movieId}" type="button" class="add-to-watched"  id="watched-btn">ADD TO WATCHED</button>
           <button class="button-standard modal-button modal-button__queue add" data-movie-id="${movieId}" type="button" class="add-to-queue" id="queue-button">ADD TO QUEUE</button>
         </div>
       </div>

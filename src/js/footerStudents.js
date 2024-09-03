@@ -1,20 +1,16 @@
-// Otwarcie okna modalnego
 document.getElementById('openModal').addEventListener('click', function () {
-  document.getElementById('studentModal').style.display = 'block'; // zmiana na flex aby centrować modal
-  showStudent(currentIndex); // Pokaż zawartość modalną dla pierwszego uczestnika
+  document.getElementById('studentModal').style.display = 'block';
+  showStudent(currentIndex);
 });
 
-// Inicjalizacja indeksu
 let currentIndex = 0;
 
-// Funkcja pokazująca kartę studenta
 function showStudent(index) {
   const cards = document.querySelectorAll('.student-card');
   cards.forEach(card => (card.style.display = 'none'));
   cards[index].style.display = 'flex';
 }
 
-// Przypisanie obsługi zdarzeń dla przycisków nawigacyjnych i zamknięcia wewnątrz modala
 function assignNavigationHandlers() {
   document.addEventListener('click', function (event) {
     if (event.target.matches('.modal-prev')) {
@@ -35,17 +31,15 @@ function assignNavigationHandlers() {
   });
 }
 
-// Dodanie obsługi zamknięcia modala za pomocą klawisza Esc
 document.addEventListener('keydown', function (event) {
   if (event.key === 'Escape') {
     document.getElementById('studentModal').style.display = 'none';
   }
 });
 
-// Funkcja inicjalizująca
 function initModal() {
-  showStudent(currentIndex); // Pokaż bieżącą kartę
-  assignNavigationHandlers(); // Przypisz obsługę zdarzeń
+  showStudent(currentIndex);
+  assignNavigationHandlers();
 }
 
 initModal();
